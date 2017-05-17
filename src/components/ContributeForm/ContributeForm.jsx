@@ -10,7 +10,7 @@ const renderField = ({
     error
   }
 }) => (
-  <div>
+  <div className="form-control">
     <label>{label}</label>
     <div>
       <input {...input} type={type} placeholder={label}/> {touched && error && <span>{error}</span>}
@@ -24,11 +24,10 @@ const ImmutableForm = (props) => {
     <div className="contribute-form">
       <form onSubmit={handleSubmit}>
         <Field name="username" type="text" component={renderField} label="Username"/>
-        <Field name="email" type="email" component={renderField} label="Email"/>
-        <Field name="age" type="number" component={renderField} label="Age"/>
-        <div>
-          <button type="submit" disabled={submitting}>Submit</button>
-          <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+        <Field name="videolink" type="text" component={renderField} label="Video Link"/>
+        <div className="action-container">
+          <button className="primary" type="submit" disabled={submitting}>Submit</button>
+          <button type="button" disabled={pristine || submitting} onClick={reset}>Clear</button>
         </div>
       </form>
     </div>
