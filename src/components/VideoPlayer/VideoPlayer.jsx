@@ -9,6 +9,7 @@ class VideoPlayer extends React.Component {
     console.log('finished the current video');
   }
   render() {
+    console.log(this.props);
     const opts = {
       height: '390',
       width: '640',

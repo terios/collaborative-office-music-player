@@ -1,18 +1,16 @@
+import {combineReducers} from 'redux-immutable';
+import {reducer as form} from 'redux-form/immutable' // <--- immutable import
+
 import {List, Map, isKeyed} from 'immutable';
 
 function loadState(state, newState) {
-  console.log('loaded the state', newState);
   return state.merge(newState);
 }
 
 function playVideo(state, video) {
   let currentVideo = state.get('currentVideo');
   if (currentVideo) {
-    return state.merge({
-      currentVideo: video,
-      playlist: state.get('playlist'),
-      played: state.get('played').push(currentVideo)
-    })
+    return state.merge({currentVideo: video, playlist: state.get('playlist'), played: state.get('played').push(currentVideo)})
   } else {
     console.log(2);
     return {
@@ -23,7 +21,8 @@ function playVideo(state, video) {
   }
 }
 
-export default function(state = Map(), action) {
+function defaultReducer(state = Map(), action) {
+  //export default function(state = Map(), action) {
   switch (action.type) {
     case 'NEXT_VIDEO':
       return nextVideo(state);
@@ -36,3 +35,9 @@ export default function(state = Map(), action) {
   }
   return state;
 }
+
+const reducers = {
+  form: form,
+  main: defaultReducer
+}
+export default combineReducers(reducers)
