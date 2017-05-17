@@ -5,6 +5,15 @@ export function loadState(state) {
     };
 }
 
+
+export function selectVideo(video) {
+    return {
+        type: 'SELECT_VIDEO',
+        video
+    };
+}
+
+
 export function nextVideo() {
     return {
         type: 'NEXT_VIDEO',

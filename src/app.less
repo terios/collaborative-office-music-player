@@ -1,10 +1,46 @@
-.container{
-  display: flex;
+body {
+  font-family: 'Poppins', sans-serif;
+}
 
-  .videoPlayer{
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: black;
+
+  .videoPlayer {
     padding: 10px;
   }
-  .playlist{
+
+  .playlist {
     padding: 10px 0;
+
+    .videobox {
+      display: flex;
+      width: 320px;
+      border: 1px solid transparent;
+
+      &:hover {
+        transition: 0.25s;
+        border: 1px solid #691414;
+      }
+
+      .videoDetails {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        padding-left: 10px;
+
+        .title {
+          color: white;
+          font-size: 14px;
+        }
+
+        .owner {
+          color: #a0a0a0;
+          font-size: 12px;
+        }
+      }
+    }
   }
 }
