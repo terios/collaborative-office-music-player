@@ -5,6 +5,12 @@ export function loadState(state) {
     };
 }
 
+export function postVideo(video){
+  return {
+      type: 'POST_VIDEO',
+      video
+  };
+}
 
 export function selectVideo(video) {
     return {

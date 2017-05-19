@@ -20,11 +20,13 @@ const renderField = ({
 
 const ImmutableForm = (props) => {
   const {handleSubmit, pristine, reset, submitting} = props
+
   return (
     <div className="contribute-form">
       <form onSubmit={handleSubmit}>
-        <Field name="username" type="text" component={renderField} label="Username"/>
-        <Field name="videolink" type="text" component={renderField} label="Video Link"/>
+        <Field name="owner" type="text" component={renderField} label="Username"/>
+        <Field name="title" type="text" component={renderField} label="Video title"/>
+        <Field name="id" type="text" component={renderField} label="Video Link"/>
         <div className="action-container">
           <button className="primary" type="submit" disabled={submitting}>Submit</button>
           <button type="button" disabled={pristine || submitting} onClick={reset}>Clear</button>
