@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom';
 import {Router, Route, hashHistory} from 'react-router';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import reducer from './reducer/reducer';
+import reducer from './reducer';
 import {setState} from './action_creator';
 //import remoteActionMiddleware from './remote_action_middleware';
 import App from './components/App';
@@ -41,8 +41,8 @@ store.dispatch({
   }
 });
 
-const routes = <Route component={App}>
-  <Route path="/" component={ApplicationContainer}/>
+const routes = <Route path="/" component={App}>
+  <Route IndexRoute path="/home" component={ApplicationContainer}/>
 </Route>;
 
 ReactDOM.render(

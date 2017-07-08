@@ -3,6 +3,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import Header from '../Header/Header';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import Playlist from '../Playlist/Playlist';
 import Contribute from '../Contribute/Contribute';
@@ -12,6 +13,7 @@ class Application extends React.Component {
 
   render() {
     return <div className="container">
+      <Header/>
       <VideoPlayer {...this.props}/>
       <Playlist {...this.props}/>
       <Contribute {...this.props}/>
